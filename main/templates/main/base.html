@@ -1,0 +1,196 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mehia | {% block title %}{% endblock %}</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'images/fav2.ico' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'images/fav2.ico' %}" type="image/x-icon">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/colors2.css' %}" id="ui-theme-color">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+</head>
+
+<body>
+	<div class="loader_wrapper">
+        <div class="loader">
+			<img src="{% static 'images/loader.gif' %}" alt="" class="img-fluid">
+        </div>
+    </div>
+    <!--// loader_wrapper -->
+
+	<div id="wrapper">
+		<header class="new-block main-header">
+			<div class="main-nav new-block">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="logo">
+								<a href="index.html"><img src="{% static 'images/logo/logo.png' %}" alt="logo" class="img-responsive"></a>
+							</div>
+							<div class="location-block">
+								<p>Ghana</p>
+								<!-- <span>+00 123 456 789</span> -->
+							</div>
+							<a href="#" class="nav-opener"><i class="fa fa-bars"></i></a>
+							<nav class="nav">
+								<ul class="list-unstyled">
+									<li class="drop"><a href="#">Home</a></li>
+									<li class="drop"><a href="#">Menu</a>
+										<ul class="drop-down">
+											<li><a href="menu.html">Jollof Rice</a></li>
+											<li><a href="shopping_cart.html">Cart page</a></li>
+										</ul>
+									</li>
+									<li class="drop"><a href="#">Category</a>
+										<ul class="drop-down">
+											<li><a href="#">local Dishes</a></li>
+											<li><a href="#">Continental Dishes</a></li>
+											<li><a href="shopping_cart.html">Cart page</a></li>
+										</ul>
+									</li>
+									<li><a href="#">Meals</a></li>
+									<li><a href="#">Pizza</a></li>
+									<li><a href="about_us.html">About</a></li>
+									<li><a href="contact.html">Contact Us</a></li>
+									<li><a href="{% url 'account:login' %}">Login/Signup</a></li>
+								</ul>
+							</nav>
+							<div class="nav-right-block">
+								<ul class="list-unstyled">
+									<li><a href="#"><i class="flaticon-scooter-front-view"></i><span class="nav-price">$00.00</span></a></li>
+								</ul>
+							</div><!-- nav-login -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</header> <!-- header -->
+
+        <div>
+			{% block content %}
+
+			{% endblock %}
+		</div>
+
+        <footer class="main-footer new-block">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+						<div class="footer-head">
+							<h3>About Us :</h3>
+						</div>
+						<div class="footer-content">
+							<p>Donec tincidunt, augue a convallis cursus, sapien eros efficitur sem in placerat sapien est nec quam.</p>
+							<a href="#" class="link">Read More</a>
+							<ul class="list-unstyled card-block">
+								<li><a href="#"><img src="{% static 'images/crt1.png' %}" alt=""></a></li>
+								<li><a href="#"><img src="{% static 'images/crt2.png' %}" alt=""></a></li>
+								<li><a href="#"><img src="{% static 'images/crt3.png' %}" alt=""></a></li>
+								<li><a href="#"><img src="{% static 'images/crt4.png' %}" alt=""></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+						<div class="our-company">
+							<div class="footer-head">
+								<h3>Our Company :</h3>
+							</div>
+							<div class="footer-content">
+								<ul class="list-unstyled">
+									<li><a href="#">New In</a></li>
+									<li><a href="#">Pizza murgon</a></li>
+									<li><a href="#">Burger king</a></li>
+									<li><a href="#">Fried Chicken</a></li>
+									<li><a href="#">Mocktail</a></li>
+									<li><a href="#">Top Brands</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+						<div class="footer-head">
+							<h3>Customer Care :</h3>
+						</div>
+						<div class="footer-content">
+							<ul class="list-unstyled">
+								<li><a href="#">New In</a></li>
+								<li><a href="#">Pizza murgon</a></li>
+								<li><a href="#">Burger king</a></li>
+								<li><a href="#">Fried Chicken</a></li>
+								<li><a href="#">Mocktail</a></li>
+								<li><a href="#">Top Brands</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+						<div class="flickr">
+							<div class="footer-head">
+								<h3>Get Flickr :</h3>
+							</div>
+							<div class="footer-content">
+								<ul class="list-unstyled">
+									<li><a href="#"><img src="{% static 'images/Layer-12.jpg' %}" alt="" class="img-responsive"></a></li>
+									<li><a href="#"><img src="{% static 'images/Layer-13.jpg' %}" alt="" class="img-responsive"></a></li>
+									<li><a href="#"><img src="{% static 'images/Layer-14.jpg' %}" alt="" class="img-responsive"></a></li>
+									<li><a href="#"><img src="{% static 'images/Layer-15.jpg' %}" alt="" class="img-responsive"></a></li>
+									<li><a href="#"><img src="{% static 'images/Layer-16.png' %}" alt="" class="img-responsive"></a></li>
+									<li><a href="#"><img src="{% static 'images/Layer-17.jpg' %}" alt="" class="img-responsive"></a></li>
+									<li><a href="#"><img src="{% static 'images/Layer-18.jpg' %}" alt="" class="img-responsive"></a></li>
+									<li><a href="#"><img src="{% static 'images/Layer-19.jpg' %}" alt="" class="img-responsive"></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<div class="copy-right">
+			<div class="container">
+				<p><a target="_blank" href="https://www.templateshub.net">Templates Hub</a></p>
+				<ul class="social-nav">
+					<li><a href="#"><i class="flaticon-facebook-logo"></i></a></li>
+					<li><a href="#"><i class="flaticon-twitter"></i></a></li>
+					<li><a href="#"><i class="flaticon-google-plus-logo"></i></a></li>
+					<li><a href="#"><i class="flaticon-dribbble-logo"></i></a></li>
+					<li><a href="#"><i class="flaticon-behance"></i></a></li>
+				</ul>
+			</div>
+		</div>
+		<span id="go_to_top" class="go-to-top"><i class="flaticon-up-arrow"></i></span>
+
+		<!-- <div class="theme-menu hide-sidebar">
+			<h2>Choose your color</h2>
+			<div id="style-switcher">
+				<ul class="colors theme-btn">
+					<li data-path="css/colors.css" data-url="images"> 
+						<p class="btn clr-style" style="background:#c10a28;"></p>
+					</li>
+					<li data-path="css/colors2.css" data-url="images/clr2">
+						<p class="btn clr-style" style="background:#f1b601;"></p>
+					</li>
+				</ul>
+			</div>
+			<button class="btn btn-clr"><i class="fas fa-paint-brush"></i></button>
+		</div> -->
+	</div><!-- #wrapper -->
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.html' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+	<script src="{% static 'js/slick.js ' %}"></script>
+	<script src="{% static 'js/dscountdown.min.js' %}"></script>
+    <script src="{% static 'js/jquery.nice-select.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/mixitup.min.js' %}"></script>
+    <script src="{% static 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBP1lPhUhDU6MINpruPDinAzXffRlpzzFo' %}"></script>
+	<script src="{% static 'js/map.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+
+</body>
+</html>

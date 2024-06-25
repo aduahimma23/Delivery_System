@@ -1,0 +1,121 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'account/css/account.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <h2>Mehia Delivery</h2>
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form method="POST" action="{% url 'account:signup' %}">
+                {% csrf_token %}
+                <h1>Create Account</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fa-brands fa-google"></i></a>
+                </div>
+                <span>or use your email for registration</span>
+                {% for field in form %}
+                    <div class="form-group">
+                        <input type="{{ field.field.widget.input_type }}" name="{{ field.name }}" placeholder="{{ field.label }}" 
+                                class="form-control{% if field.errors %} is-invalid{% endif %}">
+                        {% for error in field.errors %}
+                            <div class="invalid-feedback">
+                                {{ error }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+                <div class="form-group password-container">
+                    <input type="password" name="password1" placeholder="Password" class="form-control{% if form.password1.errors %} is-invalid{% endif %}" id="password1">
+                    <i class="fas fa-eye toggle-password" onclick="togglePasswordVisibility('password1')"></i>
+                    {% for error in form.password1.errors %}
+                        <div class="invalid-feedback">
+                            {{ error }}
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="form-group password-container">
+                    <input type="password" name="confirm_password" placeholder="Confirm Password" class="form-control{% if form.confirm_password.errors %} is-invalid{% endif %}" id="confirm_password">
+                    <i class="fas fa-eye toggle-password" onclick="togglePasswordVisibility('confirm_password')"></i>
+                    {% for error in form.confirm_password.errors %}
+                        <div class="invalid-feedback">
+                            {{ error }}
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" name="terms_and_conditions" class="form-check-input{% if form.terms_and_conditions.errors %} is-invalid{% endif %}" id="terms_and_conditions">
+                    <label class="form-check-label" for="terms_and_conditions">I agree to the terms and conditions</label>
+                    {% for error in form.terms_and_conditions.errors %}
+                        <div class="invalid-feedback">
+                            {{ error }}
+                        </div>
+                    {% endfor %}
+                </div>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+
+	    <div class="form-container sign-in-container">
+	  	    <form method="POST" action="{% url 'account:login' %}">
+                {% csrf_token %}
+                <h1>Sign in</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fa-brands fa-google"></i></a>
+                </div>
+                <span>or use your account</span>
+                {{ form.non_field_errors }}
+                <div class="form-group">
+                    <input type="email" name="username" placeholder="Email" class="form-control{% if form.username.errors %} is-invalid{% endif %}">
+                    {% for error in form.username.errors %}
+                        <div class="invalid-feedback">
+                            {{ error }}
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="form-group password-container">
+                    <input type="password" name="password" placeholder="Password" class="form-control{% if form.password.errors %} is-invalid{% endif %}" id="password">
+                    <i class="fas fa-eye toggle-password" onclick="togglePasswordVisibility('password')"></i>
+                    {% for error in form.password.errors %}
+                        <div class="invalid-feedback">
+                            {{ error }}
+                        </div>
+                    {% endfor %}
+                </div>
+                <a href="#">Forgot your password?</a>
+                <button type="submit">Sign In</button>
+            </form>
+        </div>
+
+	    <div class="overlay-container">
+	    	<div class="overlay">
+	    		<div class="overlay-panel overlay-left">
+	    			<h1>Welcome Back Mehia User!</h1>
+	    			<p>To keep connected with us please login with your personal info</p>
+	    			<button class="ghost" id="signIn">Sign In</button>
+	    		</div>
+	    		<div class="overlay-panel overlay-right">
+	    			<h1>Hello, Mehia User!</h1>
+	    			<p>Enter your personal details and start journey with us</p>
+	    			<button class="ghost" id="signUp">Sign Up</button>
+	    		</div>
+	    	</div>
+	    </div>
+    </div>
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="{% static 'account/js/account.js' %}"></script>
+</body>
+</html>
