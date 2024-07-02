@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ category.name }}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .menu-item-card {
+            margin-bottom: 20px;
+        }
+        .menu-item-card img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-4">{{ category.name }}</h1>
+        <div class="row">
+            {% for item in menu_items %}
+            <div class="col-lg-4 col-md-6 col-sm-12 menu-item-card">
+                <div class="card">
+                    <img src="{{ item.image.url }}" alt="{{ item.name }}" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ item.name }}</h5>
+                        <p class="card-text">{{ item.description }}</p>
+                        {% if item.discounted_price < item.price %}
+                        <p class="card-text">
+                            <span>${{ item.discounted_price }}</span>
+                            <del>${{ item.price }}</del>
+                        </p>
+                        {% else %}
+                        <p class="card-text">${{ item.price }}</p>
+                        {% endif %}
+                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <a href="{% url 'category_list' %}" class="btn btn-secondary mt-4">Back to Categories</a>
+    </div>
+</body>
+</html>

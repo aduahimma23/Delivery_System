@@ -1,0 +1,13 @@
+{% extends "main/base.html" %}
+{% block title %}Cancel Order{% endblock %}
+{% block content %}
+
+<h2>Cancel Order</h2>
+<p>Order ID: {{ order.id }}</p>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Cancel Order</button>
+</form>
+
+{% endblock %}

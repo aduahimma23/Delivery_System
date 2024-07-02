@@ -26,7 +26,7 @@ Project:	Domnoo  - Responsive HTML Template
             this.cat_slider();
             this.review_slider();
             this.item_slider1();
-            this.item_slider2();
+            // this.item_slider2();
             this.b_img_slider();
             this.blog_slider();
             this.thankfull_logo_slider();
@@ -170,6 +170,7 @@ Project:	Domnoo  - Responsive HTML Template
                 });
             }
          },
+         
         // review_slider
          review_slider: function(){
             if ($('.review_slider').length > 0) {
@@ -231,35 +232,36 @@ Project:	Domnoo  - Responsive HTML Template
             }
          },
         // item-slider2
-         item_slider2: function(){
-            if ($('.item-slider2').length > 0) {
-                $('.item-slider2').owlCarousel({
-                    margin:30,
-                    loop:true,
-                    nav:true,
-                    dots: false,
-                    autoplay:false,
-                    navText: ['<i class="flaticon-left-arrow"></i>', '<i class="flaticon-right-arrow"></i>' ],
-                    responsive:{
-                        0:{
-                            items:1
-                        },
-                        480:{
-                            items:2
-                        },
-                        600:{
-                            items:2
-                        },
-                        800:{
-                            items:3
-                        },
-                        1200:{
-                            items:4
-                        }
-                    }
-                });
-            }
-         },
+        //  item_slider2: function(){
+        //     if ($('.item-slider2').length > 0) {
+        //         $('.item-slider2').owlCarousel({
+        //             margin:30,
+        //             loop:true,
+        //             nav:true,
+        //             dots: false,
+        //             autoplay:false,
+        //             navText: ['<i class="flaticon-left-arrow"></i>', '<i class="flaticon-right-arrow"></i>' ],
+        //             responsive:{
+        //                 0:{
+        //                     items:1
+        //                 },
+        //                 480:{
+        //                     items:2
+        //                 },
+        //                 600:{
+        //                     items:2
+        //                 },
+        //                 800:{
+        //                     items:3
+        //                 },
+        //                 1200:{
+        //                     items:4
+        //                 }
+        //             }
+        //         });
+        //     }
+        //  },
+
         // b_img_slider
          b_img_slider: function(){
             if ($('.b_img_slider').length > 0) {
@@ -786,4 +788,8 @@ Project:	Domnoo  - Responsive HTML Template
         return false
     });
 
+
+    
 })(jQuery);
+
+

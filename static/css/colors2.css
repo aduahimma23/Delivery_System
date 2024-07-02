@@ -133,15 +133,15 @@ a.link:hover,
 .main-nav.home2 {
 	background: rgba(241, 182, 1, 0.2);
 }
-.main-nav .nav-right-block {
+/* .main-nav .nav-right-block {
 	background: #fabf0b;
-}
+} */
 .main-nav:before {
 	background: url(../images/brd_2.png);
 }
-.main-nav .nav-right-block:before {
+/* .main-nav .nav-right-block:before {
 	background: url(../images/brd2_2.png);	
-}
+} */
 /*bg color shades*/
 .bg1 {
 	background:  #ffdf00;

@@ -3,6 +3,7 @@ from django.contrib.auth.models import BaseUserManager, AbstractUser
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.core.exceptions import ValidationError
+from django.conf import settings
 
 class CustomeUserManager(BaseUserManager):
     def create_user(self, email, password=None, **extra_fields):
@@ -58,7 +59,7 @@ class CustomUser(AbstractUser):
     
 
 class CustomerProfile(models.Model):
-    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, related_name="customer_profile")
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="accounts_customer_profile")
     phone_number = models.CharField(max_length=15)
     address = models.TextField()
 

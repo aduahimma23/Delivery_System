@@ -1,0 +1,27 @@
+<div class="container">
+    <h1 class="my-4">Vendor Dashboard</h1>
+    <a href="{% url 'create_discount' %}" class="btn btn-success mb-3">Create New Discount</a>
+    <h2>Current Discounts</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Menu Item</th>
+                <th>Size</th>
+                <th>Discount Percent</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for discount in discounts %}
+            <tr>
+                <td>{{ discount.menu_item_price.menu_item.name }}</td>
+                <td>{{ discount.menu_item_price.size }}</td>
+                <td>{{ discount.discount_percent }}%</td>
+                <td>{{ discount.start_date }}</td>
+                <td>{{ discount.end_date }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

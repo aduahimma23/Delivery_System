@@ -1,0 +1,16 @@
+{% extends "main/base.html" %}
+{% block title %}Track Order{% endblock %}
+{% block content %}
+
+<div class="container">
+    <h1>Track Order {{ order.id }}</h1>
+    <ul class="list-group">
+        {% for event in tracking_events %}
+        <li class="list-group-item">
+            <strong>{{ event.timestamp }}</strong>: {{ event.status }} - {{ event.details }}
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}
