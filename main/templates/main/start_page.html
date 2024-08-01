@@ -1,0 +1,72 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mehia Online</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'css/start_style.css' %}">
+  <link rel="shortcut icon" href="{% static 'images/logo/logo.png' %}" type="image/x-icon">
+  <link rel="icon" href="{% static 'images/logo/logo.png' %}" type="image/x-icon">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+  <nav class="navbar">
+    <div class="container-fluid d-flex justify-content-center">
+      <div class="navbar-brand" >
+        <!-- <img src="{% static 'images/logo/logo.png' %}" alt="">  -->
+        Mehia Online Deals
+      </div>
+    </div>
+  </nav>
+
+  <div class="container text-center">
+    <h1 class="mb-5">Akwaaba, Wohia Den?</h1>
+    <div class="row justify-content-center">
+      <div class="col-12 mb-4 option">
+        <a href="{% url 'main:home' %}" class="btn-custom food-delivery">
+          <img src="{% static 'images/logo/food.png' %}" class="card-img-top" alt="Food Delivery">
+        </a>
+      </div>
+      <div class="col-12 mb-4 option">
+        <a href="{% url 'item:home' %}" class="btn-custom item-delivery">
+          <img src="{% static 'images/logo/delivery.png' %}" class="card-img-top" alt="Item Delivery">
+        </a>
+      </div>
+      <div class="col-12 mb-4 option">
+        <a href="{% url 'item:home' %}" class="btn-custom item-delivery">
+          <img src="{% static 'images/logo/online_deal.png' %}" class="card-img-top" alt="Item Delivery">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer mt-auto py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col mb-3">
+          <a href=""><h5>About Us</h5></a>
+        </div>
+        <div class="col mb-3">
+          <a href="{% url 'main:contact' %}"><h5>Contact</h5></a>
+        </div>
+        <div class="col mb-3">
+          <a href=""><h5>Follow Us</h5></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 text-center">
+          <p class="text-muted">&copy; 2024 Mehia Online Deals. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>

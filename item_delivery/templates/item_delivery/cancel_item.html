@@ -1,0 +1,22 @@
+{% extends 'item_delivery/base.html' %}
+{% block title %}Cancel{5 endblock %}
+{% block content %}
+
+<div class="cancel-form-container">
+    <h1><i class="fas fa-times-circle"></i> Cancel Delivery Item</h1>
+    <form method="post" action="">
+        <!-- CSRF Token -->
+        {% csrf_token %}
+        <!-- Reason Field -->
+        <div class="form-group">
+            <label for="id_reason">Reason for Cancellation</label>
+            <textarea name="reason" cols="40" rows="10" class="form-control" id="id_reason" maxlength="500"></textarea>
+        </div>
+        <!-- Submit Button -->
+        <div class="form-group text-center">
+            <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i>Cancel</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

@@ -21,10 +21,23 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "main", "accounts", "food_vendor",
-    "delivery_agent", "item_delivery",
+    "main",
+    "accounts",
+    "food_vendor",
+    "courier",
+    "item_delivery",
 ]
 
+ASGI_APPLICATION = "mehia.asgi.application"
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [("127.0.0.1", 6379)]
+        }
+    }
+}
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
 MIDDLEWARE = [
@@ -56,7 +69,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "mehia.wsgi.application"
-
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases

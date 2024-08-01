@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mehia | {% endblock%}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'item_delivery/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'item_delivery/css/responsive.css' %}">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="profile-section">
+                    <i class="fas fa-user profile-icon"></i>
+                    <div class="welcome-message">
+                        <span>Emmanuel Aduah</span>
+                        <span>Welcome Back</span>
+                    </div>
+                    <a class="notification-icon" href="#">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge badge-pill badge-danger">3</span>
+                    </a>
+                </div>
+                <div class="track-item">
+                    <input type="text" placeholder="Enter Tracking Number">
+                    <button><i class="fas fa-search"></i></button>
+                    <a class="scan-icon" href="#"><i class="fas fa-qrcode"></i></a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <nav class="navbar navbar-expand-lg main-menu">
+        <div class="container">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'item:home' %}">
+                        <i class="fas fa-home"></i>
+                        <span class="sr-only">(current)</span>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'item:details' %}">
+                        <i class="fas fa-plus"></i>
+                        Add
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-star"></i>
+                        Features
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{#}">
+                        <i class="fas fa-search-location"></i>
+                        Track Item
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="main-body">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCEQcdF0iCnLT-l16jxO4PbNEKuIUBEYcM"></script>
+    <script src="{% static 'item_delivery/js/main.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

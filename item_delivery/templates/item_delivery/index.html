@@ -1,0 +1,187 @@
+{% extends 'item_delivery/base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+
+<div class="container">
+    <div class="main-content">
+        <div class="row">
+            <div class="col">
+                <a href="{% url 'item:details' %}" class="btn btn-primary option-btn">
+                    <i class="fas fa-paper-plane icon"></i>Send
+                </a>
+            </div>
+            <div class="col">
+                <a href="" class="btn btn-primary option-btn">
+                    <i class="fas fa-box icon"></i>Receive
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="container">
+    <h1 class="text-center">Upcoming Parcels</h1>
+    <div class="row">
+        {% for parcel in parcels %}
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header" data-toggle="collapse" data-target="#details{{ forloop.counter }}">
+                    <i class="fas fa-box"></i> Order #{{ parcel.order_number }}
+                </div>
+                <div id="details{{ forloop.counter }}" class="collapse">
+                    <div class="card-body d-flex">
+                        <img src="{% static parcel.image_url %}" alt="Parcel Image" onerror="this.onerror=null; this.src='https://via.placeholder.com/60';">
+                        <div>
+                            <h5 class="card-title">{{ parcel.name }}</h5>
+                            <p class="card-text">Expected Delivery: {{ parcel.delivery_date }}</p>
+                            <p class="card-text"><small class="text-muted">Recipient: {{ parcel.recipient }}</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div> -->
+
+<div class="container">
+    <h1 class="text">Upcoming Parcels</h1>
+    <div class="row">
+        <!-- Parcel 1 -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header" data-toggle="collapse" data-target="#details1">
+                    <i class="fas fa-box"></i> Order #12348
+                </div>
+                <div id="details1" class="collapse">
+                    <div class="card-body d-flex">
+                        <div>
+                            <h5 class="card-title">Parcel Name 1</h5>
+                            <p class="card-text">Expected Delivery: 2024-07-10</p>
+                            <p class="card-text"><small class="text-muted">Recipient: John Doe</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Parcel 2 -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header" data-toggle="collapse" data-target="#details2">
+                    <i class="fas fa-box"></i> Order #12349
+                </div>
+                <div id="details2" class="collapse">
+                    <div class="card-body d-flex">
+                        <div>
+                            <h5 class="card-title">Parcel Name 2</h5>
+                            <p class="card-text">Expected Delivery: 2024-07-11</p>
+                            <p class="card-text"><small class="text-muted">Recipient: Jane Smith</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Parcel 3 -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header" data-toggle="collapse" data-target="#details3">
+                    <i class="fas fa-box"></i> Order #12350
+                </div>
+                <div id="details3" class="collapse">
+                    <div class="card-body d-flex">
+                        <div>
+                            <h5 class="card-title">Parcel Name 3</h5>
+                            <p class="card-text">Expected Delivery: 2024-07-12</p>
+                            <p class="card-text"><small class="text-muted">Recipient: Alice Johnson</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h1 class="text">Recently Delivered</h1>
+    <div class="row">
+        <!-- Item 1 -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header" data-toggle="collapse" data-target="#details1">
+                    <i class="fas fa-box"></i> Order #12345
+                </div>
+                <div id="details1" class="collapse">
+                    <div class="card-body d-flex">
+                        <div>
+                            <h5 class="card-title">Item Name 1</h5>
+                            <p class="card-text">Delivered on: 2024-07-01</p>
+                            <p class="card-text"><small class="text-muted">Delivered to: Hazel Wantu</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Item 2 -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header" data-toggle="collapse" data-target="#details2">
+                    <i class="fas fa-box"></i> Order #12346
+                </div>
+                <div id="details2" class="collapse">
+                    <div class="card-body d-flex">
+                        <div>
+                            <h5 class="card-title">Item Name 2</h5>
+                            <p class="card-text">Delivered on: 2024-07-02</p>
+                            <p class="card-text"><small class="text-muted">Delivered to: Jane Smith</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Item 3 -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header" data-toggle="collapse" data-target="#details3">
+                    <i class="fas fa-box"></i> Order #12347
+                </div>
+                <div id="details3" class="collapse">
+                    <div class="card-body d-flex">
+                        <div>
+                            <h5 class="card-title">Item Name 3</h5>
+                            <p class="card-text">Delivered on: 2024-07-03</p>
+                            <p class="card-text"><small class="text-muted">Delivered to: Alice Johnson</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 
+<div class="container">
+    <h1 class="text-center">Recently Delivered Items</h1>
+    <div class="row">
+        {% for item in items %}
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header" data-toggle="collapse" data-target="#details{{ forloop.counter }}">
+                    <i class="fas fa-box"></i> Order #{{ item.order_number }}
+                </div>
+                <div id="details{{ forloop.counter }}" class="collapse">
+                    <div class="card-body d-flex">
+                        <img src="{% static item.image_url %}" alt="Item Image" onerror="this.onerror=null; this.src='https://via.placeholder.com/60';">
+                        <div>
+                            <h5 class="card-title">{{ item.name }}</h5>
+                            <p class="card-text">Delivered on: {{ item.delivery_date }}</p>
+                            <p class="card-text"><small class="text-muted">Delivered to: {{ item.recipient }}</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div> -->
+{% endblock %}

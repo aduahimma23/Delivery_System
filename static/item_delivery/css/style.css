@@ -1,0 +1,284 @@
+html, body{
+    height: 100%;
+    margin: 0;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #FFF9C9;
+    max-height: 100vh;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+}
+.main-body{
+    min-height: 100vh;
+}
+.header {
+    background: #ffde00;
+    color: #262726;
+    padding: 10px 0;
+}
+.header .navbar {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .profile-section {
+    display: flex;
+    align-items: center;
+}
+.header .profile-section .profile-icon {
+    font-size: 40px;
+    background: #262726;
+    color: #ffde00;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+.header .welcome-message {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2em;
+    margin-left: 20px;
+    text-align: left;
+}
+.header .notification-icon {
+    position: relative;
+    color: #262726;
+    font-size: 1.2em;
+    margin-left: 100px;
+}
+.header .notification-icon .badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #262726;
+    color: #ffde00;
+    font-size: 0.8em;
+    border-radius: 50%;
+    padding: 2px 5px;
+}
+.header .track-item {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+.header .track-item input {
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px 0 0 3px;
+}
+.header .track-item button {
+    border: none;
+    padding: 5px 10px;
+    border-radius: 0 3px 3px 0;
+    background-color: #262726;
+    color: #ffde00;
+}
+.header .scan-icon {
+    color: #262726;
+    font-size: 1.2em;
+    margin-left: 10px;
+}
+.main-menu{
+    background-color: #262726;
+    width: 100%;
+}
+.main-menu .navbar-nav {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding-left: 0;
+    align-items: center;
+}
+.main-menu .navbar-nav .nav-item {
+    display: inline-block;
+}
+.main-menu .nav-item {
+    list-style: none;
+}
+.main-menu .nav-link {
+    display: flex;
+    color: #fff;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
+.main-menu .nav-link:hover {
+    background: #ffde00;
+    border-radius: 5px;
+}
+
+/* Chose an option CSS */
+.main-content{
+   margin: 0px;
+   margin: 20px 50px 20px -40px;
+}
+.option-btn {
+    display: flex;
+    width: 80%;
+    height: 80px;
+    font-size: 1.5rem;
+    padding-right: 20px;
+    justify-content: center;
+}
+
+.icon {
+    font-size: 2rem;
+    margin-right: 10px;
+}
+/* Recently Delivered Items */
+.card {
+    margin-bottom: 7px;
+    box-sizing: border-box;
+    justify-content: left;
+}
+.card-header {
+    background-color: #fff;
+    color: #262726;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+.card-header i{
+    color: #ffde00;
+}
+.card-body {
+    display: flex;
+    align-items: center;
+}
+.container .text{
+    background-color: #ffff;
+    font-size: 28px;
+    color: #262726;
+    margin-top: 2px;
+    padding-left: 2%;
+    border-radius: 10px;
+    border-top: 2px solid #ffde00;
+}
+
+/* Item Details CSS */
+.item-details{
+    margin-top: 20px;
+    background-color: #ECEE81;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding-bottom: 5px;
+}
+.item-details .form-group {
+    margin-bottom: 20px;
+}
+.item-details .form-control{
+    margin-right: 20px;
+}
+.item-details .form-group label {
+    font-weight: bold;
+    color: #262726;
+    margin-left: 20px;
+}
+.btn-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffde00;
+    border: 2px solid #262726;
+    color: #262726;
+    margin-left: 25%;
+    margin-bottom: 20px;
+}
+.btn-primary:hover{
+    background-color: #ECEE81;
+    color: #262726;
+    border: 2px solid #262726;
+}
+.btn-primary i {
+    margin-left: 10px;
+}
+
+/* Tracking Delivery Item CSS */
+.tracking-status {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+.tracking-status div {
+    position: relative;
+    text-align: center;
+    width: 20%;
+}
+.tracking-status div:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -50%;
+    width: 100%;
+    height: 4px;
+    background: #ccc;
+    z-index: -1;
+}
+.tracking-status div:first-child:before {
+    content: none;
+}
+.tracking-status div.active:before {
+    background: #28a745;
+}
+.tracking-status div i {
+    display: block;
+    margin: 0 auto 10px;
+    font-size: 24px;
+    color: #ccc;
+}
+.tracking-status div.active i {
+    color: #28a745;
+}
+.tracking-status div span {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Cancel Delivery Item CSS */
+.cancel-form-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+.cancel-form-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.cancel-form-container .form-group label {
+    font-weight: bold;
+}
+.cancel-form-container .btn-primary {
+    background-color: #ffde00;
+    border-color: #ffde00;
+}
+
+/* Sender datails CSS */
+.form-group {
+    display: flex;
+    align-items: center;
+}
+.form-group label {
+    min-width: 150px; /* Adjust this value as needed */
+    margin-bottom: 0;
+    margin-left: 40px;
+}
+.form-group .form-control {
+    flex: 1;
+    height: 35px;
+    width: 600px;
+    padding-right: 40px;
+}
+#map {
+    height: 200px;
+    width: 80%;
+}

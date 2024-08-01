@@ -1,0 +1,64 @@
+{% extends 'item_delivery/base.html' %}
+{% load static %}
+{% block title %}Send{% endblock %}
+{% block content %}
+
+<div class="container mt-5">
+    <button id="get-location" class="btn btn-primary mb-3">Use My Current Location</button>
+    <div id="map"></div>
+    <form id="location-form" method="post" action="#" style="display: none;">
+        {% csrf_token %}
+        <input type="hidden" name="latitude" id="latitude">
+        <input type="hidden" name="longitude" id="longitude">
+        <button type="submit" class="btn btn-success mt-3">Confirm Pickup Location</button>
+    </form>
+</div>
+
+<h1 class="text-center">Or</h1>
+<div class="container item-details">
+    <button id="toggle-button" class="btn btn-primary">Use Previous Details</button>
+    <h3 class="text-center">Or</h3>
+    <form method="post" novalidate class="w-100" style="max-width: 400px;" action="{% url 'item:receiver_details' %}">
+        <h3 class="text-center">Enter New Information</h3>
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.region.label_tag }}
+            {{ form.region }}
+            <!-- {% if form.region.errors %}
+                <div class="text-danger">
+                    {{ form.region.errors }}
+                </div>
+            {% endif %} -->
+        </div>
+        <div class="form-group">
+            {{ form.city.label_tag }}
+            {{ form.city }}
+            <!-- {% if form.city.errors %}
+                <div class="text-danger">
+                    {{ form.city.errors }}
+                </div>
+            {% endif %} -->
+        </div>
+        <div class="form-group">
+            {{ form.postal_code.label_tag }}
+            {{ form.postal_code }}
+            <!-- {% if form.postal_code.errors %}
+                <div class="text-danger">
+                    {{ form.postal_code.errors }}
+                </div>
+            {% endif %} -->
+        </div>
+        <div class="form-group">
+            {{ form.address.label_tag }}
+            {{ form.address }}
+            <!-- {% if form.address.errors %}
+                <div class="text-danger">
+                    {{ form.address.errors }}
+                </div>
+            {% endif %} -->
+        </div>
+        <button type="submit" class="btn btn-primary">Next: Receiver Details <i class="fas fa-arrow-right"></i></button>
+    </form>
+</div>
+
+{% endblock %}

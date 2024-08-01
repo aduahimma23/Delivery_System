@@ -4,7 +4,9 @@ from .views import *
 app_name = "main"
 
 urlpatterns = [
+    path("start/", start_view, name="start"),
     path("home/", home, name="home"),
+    path("contact/", contact_view, name="contact"),
     path('orders/', order_list, name='order_list'),
     path('order-items/', order_items_list, name='order_items_list'),
     path("menu_list", menu_list, name="menu"),

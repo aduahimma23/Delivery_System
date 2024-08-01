@@ -1,0 +1,24 @@
+{% extends 'item_delivery/base.html' %}
+{% block title %}item Details{% endblock %}
+{% block content %}
+
+<div class="container item-details">
+    <h1 class="text-center">Item Details</h1>
+    <form method="post" action="{% url 'item:send' %}">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="id_item_description">Description:</label>
+            {{ form.item_description }}
+        </div>
+        <div class="form-group">
+            <label for="id_weight">Weight:</label>
+            {{ form.weight }}
+        </div>
+        <div class="form-group">
+            <label for="id_special_instructions">Instructions:</label>
+            {{ form.special_instructions }}
+        </div>
+        <button type="submit" class="btn btn-primary">Sender Details <i class="fas fa-arrow-right"></i></button>
+    </form>
+    
+{% endblock %}

@@ -9,8 +9,14 @@ from .forms import ReviewForm, CancelOrderForm
 
 app_name = "main"
 
+def start_view(request):
+    return render(request, "main/start_page.html")
+
 def home(request):
     return render(request, "main/index.html")
+
+def contact_view(request):
+    return render(request, "main/contact.html")
 
 def menu_list(request):
     menu_items = MenuItem.objects.filter()

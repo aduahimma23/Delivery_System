@@ -1,22 +1,50 @@
 from django import forms
-from .models import (DeliveryItem, SenderDetails, ReceiverDetails, CancelDeliveryItem, DeliveryItemReview)
+from .models import (DeliveryItem, SenderDetails, ReceiverDetails, CancelDeliveryItem, 
+                     TrackDeliveryItem, DeliveryItemReview)
 
 
 class DeliveryItemForm(forms.ModelForm):
     class Meta:
         model = DeliveryItem
-        fields = ['item_description', 'item_weight', 'delivery_date', 'special_instructions']
+        fields = ['item_description', "weight", 'special_instructions']
+        
+        widgets = {
+            "item_description": forms.TextInput(attrs={"class": "form-control", "placeholder": "Item Description"}),
+            "weight": forms.TextInput(attrs={"class": "form-control", "placeholder": "150kg"}),
+            "special_instructions": forms.TextInput(attrs={"class": "form-control", "placeholder": "Special Isntruction"})
+        }
 
-
-class SenderAddressForm(forms.ModelForm):
+class SenderDetailsForm(forms.ModelForm):
     class Meta:
         model = SenderDetails
-        fields = ['sender_name', 'sender_address', 'sender_city', 'sender_state', 'sender_postal_code', 'sender_phone_number']
+        fields = ['address', 'city', 'region', 'postal_code']
 
-class ReceiverAddressForm(forms.ModelForm):
+        widgets = {
+            "address": forms.TextInput(attrs={"class": "form-control", "placeholder": "Sender Address"}),
+            "city": forms.TextInput(attrs={"class": "form-control", "placeholder": "e.g. Accra"}),
+            "region": forms.TextInput(attrs={"class": "form-control", "placeholder": "Greater Accra"}),
+            "postal_code": forms.TextInput(attrs={"class": "form-control", "placeholder": "CK-0001-8859"})
+        }
+
+class ReceiverDetailsForm(forms.ModelForm):
     class Meta:
         model = ReceiverDetails
-        fields = ['recipient_name', 'recipient_address', 'recipient_city', 'recipient_state', 'recipient_postal_code', 'recipient_phone_number']
+        fields = ['name', 'address', 'city', 'landmark', 'postal_code', 'phone_number']
+
+        widgets = {
+            "address": forms.TextInput(attrs={"class": "form-control", "placeholder": "Sender Address"}),
+            "city": forms.TextInput(attrs={"class": "form-control", "placeholder": "e.g. Accra"}),
+            "region": forms.TextInput(attrs={"class": "form-control", "placeholder": "Greater Accra"}),
+            "postal_code": forms.TextInput(attrs={"class": "form-control", "placeholder": "CK-0001-8859"}),
+            "landmark": forms.TextInput(attrs={"class": "form-control", "placeholder": "Near Cycle Bus Stop"}),
+            "phone_number": forms.TextInput(attrs={"class": "form-control", "placeholder": "0029758587"}),
+            "name": forms.TextInput(attrs={"class": "form-control", "placeholder": "Akwasi Aboagye"}),
+        }
+
+class TrackDeliveryItemForm(forms.ModelForm):
+    class Meta:
+        model = TrackDeliveryItem
+        fields = ['current_status']
 
 class CancelDeliveryItemForm(forms.ModelForm):
     class Meta:

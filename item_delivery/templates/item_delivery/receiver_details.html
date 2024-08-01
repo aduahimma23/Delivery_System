@@ -1,0 +1,46 @@
+{% extends 'item_delivery/base.html' %}
+{% load static %}
+{% block title %}Receive Details{% endblock %}
+{% block content %}
+
+<div class="container item-details">
+    <h2 class="text-center">Receiver Details</h2>
+    <form method="post" style="max-width: 400px;">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.name.label_tag }}
+            {{ form.name }}
+        </div>
+        <div class="form-group">
+            {{ form.address.label_tag }}
+            {{ form.address }}
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                {{ form.city.label_tag }}
+                {{ form.city }}
+            </div>
+            <div class="form-group col-md-6">
+                {{ form.region.label_tag }}
+                {{ form.region }}
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                {{ form.postal_code.label_tag }}
+                {{ form.postal_code }}
+            </div>
+            <div class="form-group col-md-6">
+                {{ form.landmark.label_tag }}
+                {{ form.landmark }}
+            </div>
+        </div>
+        <div class="form-group">
+            {{ form.phone_number.label_tag }}
+            {{ form.phone_number }}
+        </div>
+        <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,114 @@
+@media (max-width: 576px) {
+    .header{
+        padding: 40px 0;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0 0 20px 20px;
+        background-color: #262736;
+        color: #ffde00;
+    }
+    .header .container{
+        margin-right: 20px;
+        padding-left: 15px;
+        height: 40%;
+    }
+    .navbar-nav {
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+        align-items: center;
+    }
+    .profile-section {
+        justify-content: space-between;
+        width: 100%;
+        margin-left: 5px;
+    }
+    .header .profile-section .profile-icon{
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+        background-color: #ffde00;
+        color: #262736;
+        height: 50px;
+        width: 120px;
+    }
+    .welcome-message {
+        text-align: center;
+        width: 100%;
+        margin-right: 80px;
+    }
+    .header .notification-icon {
+        margin-right: 10px;
+        color: #ffde00;
+    }
+    .header .notification-icon .badge{
+        color: #ffde00;
+        margin-right: 10px;
+    }
+    .track-item {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .track-item input {
+        flex: 1;
+        margin-left: 5px;
+        margin-top: 3px;
+    }
+    .header .track-item button{
+        color: #262736;
+        background-color: #ffde00;
+        border-radius: 10%;
+        padding-bottom: 5px;
+        margin-top: 4px;
+        margin-left: 5px;
+    }
+    .header .scan-icon{
+        color: #ffde00;
+        height: 20px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .main-menu {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: #ffde00;
+    }
+    .main-menu .navbar-nav .nav-item .nav-link {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        color: #262736;
+    }
+    .main-menu .navbar-nav .nav-item .nav-link .fas {
+        margin-right: 0.5rem;
+        margin-bottom: 0;
+        color: #262736;
+    }
+    .main-menu .navbar-nav .nav-item .nav-link .sr-only {
+        margin-top: 0.25rem;
+    }
+}
+
+/* Delivery Status*/
+@media (max-width: 991.98px) {
+    .tracking-status {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .status-item {
+        flex-direction: row;
+        align-items: center;
+        margin: 0 10px;
+    }
+
+    .status-item i {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+}

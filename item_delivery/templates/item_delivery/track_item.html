@@ -1,0 +1,45 @@
+{% extends 'item_delivery/base.html' %}
+{% block title %}Tracking{% endblock %}
+{% block content %}
+
+<div class="container">
+    <h1 class="text-center">Tracking Details</h1>
+    <p><strong>Current Status:</strong> {{ track_item.current_status }}</p>
+    <p><strong>Tracking Number:</strong> {{ track_item.delivery_item.tracking_number }}</p>
+
+    <h2>Location Updates</h2>
+    <ul>
+        {% for update in location_updates %}
+            <li>
+                <strong>Status:</strong> {{ update.status }}<br>
+                <strong>Location:</strong> {{ update.location }}<br>
+                <strong>Timestamp:</strong> {{ update.timestamp }}
+            </li>
+        {% endfor %}
+    </ul>
+    
+    <div class="tracking-status">
+        <div class="active">
+            <i class="fas fa-hourglass-start"></i>
+            <span>Pending</span>
+        </div>
+        <div class="active">
+            <i class="fas fa-check-circle"></i>
+            <span>Accepted</span>
+        </div>
+        <div class="active">
+            <i class="fas fa-shipping-fast"></i>
+            <span>In Transit</span>
+        </div>
+        <div>
+            <i class="fas fa-truck"></i>
+            <span>Out for Delivery</span>
+        </div>
+        <div>
+            <i class="fas fa-box"></i>
+            <span>Delivered</span>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
